@@ -21,8 +21,6 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-      - name: Dar permissão de execução ao Maven Wrapper
-        run: chmod +x mvnw
-
       - name: Executar Testes e Validar Cobertura (JaCoCo)
-        run: ./mvnw clean verify
+        run: mvn clean verify
+        working-directory: chamarGarcom
